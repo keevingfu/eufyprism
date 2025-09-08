@@ -1,0 +1,47 @@
+{
+  "name": "eufy-prism",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eufy PRISM E28 - Intelligent Marketing System",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "jest --config jest.config.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:turbo": "turbo run test",
+    "test:watch": "jest --config jest.config.js --watch",
+    "lint": "turbo run lint",
+    "health-check": "./scripts/health-check.sh",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{js,ts,tsx,md,json}\"",
+    "prepare": "husky install",
+    "playwright:install": "playwright install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "axios": "^1.11.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "jest": "^30.1.3",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.2.4",
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@10.2.4"
+}

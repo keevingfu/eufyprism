@@ -1,0 +1,20 @@
+{
+  "name": "@eufy/shared",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "description": "Shared utilities and components for Eufy PRISM",
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.22.4",
+    "date-fns": "^3.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0"
+  }
+}

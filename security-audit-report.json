@@ -1,0 +1,229 @@
+{
+  "summary": {
+    "critical": 0,
+    "high": 26,
+    "medium": 0,
+    "low": 0,
+    "info": 1
+  },
+  "riskScore": 130,
+  "findings": [
+    {
+      "severity": "📋 INFO",
+      "category": "Dependencies",
+      "title": "Dependency audit completed with warnings",
+      "description": "Command failed: npm audit --json\n",
+      "remediation": "Review and fix identified vulnerabilities",
+      "timestamp": "2025-09-08T03:35:04.785Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-frame-options in Intelligence",
+      "description": "Security header x-frame-options is not set",
+      "remediation": "Add header: x-frame-options: SAMEORIGIN",
+      "timestamp": "2025-09-08T03:35:04.815Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-content-type-options in Intelligence",
+      "description": "Security header x-content-type-options is not set",
+      "remediation": "Add header: x-content-type-options: nosniff",
+      "timestamp": "2025-09-08T03:35:04.815Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-xss-protection in Intelligence",
+      "description": "Security header x-xss-protection is not set",
+      "remediation": "Add header: x-xss-protection: 1; mode=block",
+      "timestamp": "2025-09-08T03:35:04.815Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing strict-transport-security in Intelligence",
+      "description": "Security header strict-transport-security is not set",
+      "remediation": "Add header: strict-transport-security: max-age=31536000",
+      "timestamp": "2025-09-08T03:35:04.815Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing content-security-policy in Intelligence",
+      "description": "Security header content-security-policy is not set",
+      "remediation": "Add header: content-security-policy: present",
+      "timestamp": "2025-09-08T03:35:04.815Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-frame-options in GEM",
+      "description": "Security header x-frame-options is not set",
+      "remediation": "Add header: x-frame-options: SAMEORIGIN",
+      "timestamp": "2025-09-08T03:35:04.832Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-content-type-options in GEM",
+      "description": "Security header x-content-type-options is not set",
+      "remediation": "Add header: x-content-type-options: nosniff",
+      "timestamp": "2025-09-08T03:35:04.832Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-xss-protection in GEM",
+      "description": "Security header x-xss-protection is not set",
+      "remediation": "Add header: x-xss-protection: 1; mode=block",
+      "timestamp": "2025-09-08T03:35:04.832Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing strict-transport-security in GEM",
+      "description": "Security header strict-transport-security is not set",
+      "remediation": "Add header: strict-transport-security: max-age=31536000",
+      "timestamp": "2025-09-08T03:35:04.832Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing content-security-policy in GEM",
+      "description": "Security header content-security-policy is not set",
+      "remediation": "Add header: content-security-policy: present",
+      "timestamp": "2025-09-08T03:35:04.832Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-frame-options in GEO",
+      "description": "Security header x-frame-options is not set",
+      "remediation": "Add header: x-frame-options: SAMEORIGIN",
+      "timestamp": "2025-09-08T03:35:04.849Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-content-type-options in GEO",
+      "description": "Security header x-content-type-options is not set",
+      "remediation": "Add header: x-content-type-options: nosniff",
+      "timestamp": "2025-09-08T03:35:04.849Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-xss-protection in GEO",
+      "description": "Security header x-xss-protection is not set",
+      "remediation": "Add header: x-xss-protection: 1; mode=block",
+      "timestamp": "2025-09-08T03:35:04.849Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing strict-transport-security in GEO",
+      "description": "Security header strict-transport-security is not set",
+      "remediation": "Add header: strict-transport-security: max-age=31536000",
+      "timestamp": "2025-09-08T03:35:04.849Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing content-security-policy in GEO",
+      "description": "Security header content-security-policy is not set",
+      "remediation": "Add header: content-security-policy: present",
+      "timestamp": "2025-09-08T03:35:04.849Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-frame-options in Sandbox",
+      "description": "Security header x-frame-options is not set",
+      "remediation": "Add header: x-frame-options: SAMEORIGIN",
+      "timestamp": "2025-09-08T03:35:04.878Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-content-type-options in Sandbox",
+      "description": "Security header x-content-type-options is not set",
+      "remediation": "Add header: x-content-type-options: nosniff",
+      "timestamp": "2025-09-08T03:35:04.878Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-xss-protection in Sandbox",
+      "description": "Security header x-xss-protection is not set",
+      "remediation": "Add header: x-xss-protection: 1; mode=block",
+      "timestamp": "2025-09-08T03:35:04.878Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing strict-transport-security in Sandbox",
+      "description": "Security header strict-transport-security is not set",
+      "remediation": "Add header: strict-transport-security: max-age=31536000",
+      "timestamp": "2025-09-08T03:35:04.878Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing content-security-policy in Sandbox",
+      "description": "Security header content-security-policy is not set",
+      "remediation": "Add header: content-security-policy: present",
+      "timestamp": "2025-09-08T03:35:04.878Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-frame-options in Gateway",
+      "description": "Security header x-frame-options is not set",
+      "remediation": "Add header: x-frame-options: SAMEORIGIN",
+      "timestamp": "2025-09-08T03:35:04.883Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-content-type-options in Gateway",
+      "description": "Security header x-content-type-options is not set",
+      "remediation": "Add header: x-content-type-options: nosniff",
+      "timestamp": "2025-09-08T03:35:04.883Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing x-xss-protection in Gateway",
+      "description": "Security header x-xss-protection is not set",
+      "remediation": "Add header: x-xss-protection: 1; mode=block",
+      "timestamp": "2025-09-08T03:35:04.883Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing strict-transport-security in Gateway",
+      "description": "Security header strict-transport-security is not set",
+      "remediation": "Add header: strict-transport-security: max-age=31536000",
+      "timestamp": "2025-09-08T03:35:04.883Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "Security Headers",
+      "title": "Missing content-security-policy in Gateway",
+      "description": "Security header content-security-policy is not set",
+      "remediation": "Add header: content-security-policy: present",
+      "timestamp": "2025-09-08T03:35:04.883Z"
+    },
+    {
+      "severity": "⚠️  HIGH",
+      "category": "CORS Configuration",
+      "title": "Overly permissive CORS in Gateway API",
+      "description": "CORS allows all origins (*)",
+      "remediation": "Restrict CORS to specific trusted domains",
+      "timestamp": "2025-09-08T03:35:04.887Z"
+    }
+  ],
+  "timestamp": "2025-09-08T03:35:04.887Z"
+}

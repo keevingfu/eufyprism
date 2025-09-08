@@ -1,0 +1,95 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: eufy-postgres
+    environment:
+      POSTGRES_USER: eufy
+      POSTGRES_PASSWORD: eufy_dev_password
+      POSTGRES_DB: eufy_prism
+    ports:
+      - '5434:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - eufy-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: eufy-redis
+    command: redis-server --appendonly yes
+    ports:
+      - '6380:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - eufy-network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+    container_name: eufy-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - eufy-network
+
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine
+    container_name: eufy-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: eufy
+      RABBITMQ_DEFAULT_PASS: eufy_dev_password
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - eufy-network
+
+  grafana:
+    image: grafana/grafana:10.2.3
+    container_name: eufy-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: false
+    ports:
+      - '3001:3000'
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - eufy-network
+
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    container_name: eufy-prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./infrastructure/docker/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - eufy-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  elasticsearch_data:
+  rabbitmq_data:
+  grafana_data:
+  prometheus_data:
+
+networks:
+  eufy-network:
+    driver: bridge

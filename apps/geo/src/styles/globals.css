@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-eufy-blue text-white rounded-lg hover:bg-blue-600 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eufy-blue focus:border-transparent;
+  }
+}
+
+/* Tiptap Editor Styles */
+.ProseMirror {
+  @apply outline-none;
+}
+
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+
+.ProseMirror h1 {
+  @apply text-3xl font-bold;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-semibold;
+}
+
+.ProseMirror h3 {
+  @apply text-xl font-medium;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-6;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-6;
+}
+
+.ProseMirror blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic;
+}
+
+.ProseMirror code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.ProseMirror pre {
+  @apply bg-gray-100 p-4 rounded overflow-x-auto;
+}
+
+.ProseMirror pre code {
+  @apply bg-transparent p-0;
+}
+
+.ProseMirror table {
+  @apply border-collapse w-full;
+}
+
+.ProseMirror th,
+.ProseMirror td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.ProseMirror th {
+  @apply bg-gray-100 font-semibold;
+}
+
+.ProseMirror img {
+  @apply max-w-full h-auto;
+}

@@ -1,0 +1,52 @@
+{
+  "name": "@eufy/dam",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eufy E28 DAM - Digital Asset Management Module",
+  "scripts": {
+    "dev": "next dev -p 3011",
+    "build": "next build",
+    "start": "next start -p 3011",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.0.1",
+    "@eufy/api-client": "*",
+    "@eufy/shared": "*",
+    "@eufy/ui-kit": "*",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.15.0",
+    "antd": "^5.12.0",
+    "axios": "^1.6.5",
+    "date-fns": "^3.2.0",
+    "dayjs": "^1.11.18",
+    "file-type": "^18.7.0",
+    "minio": "^7.1.3",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
+    "next": "^14.0.4",
+    "rc-picker": "^4.11.3",
+    "rc-util": "^5.44.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "recharts": "^2.10.4",
+    "sharp": "^0.33.1",
+    "swr": "^2.2.4",
+    "uuid": "^9.0.1",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/minio": "^7.1.1",
+    "@types/multer": "^1.4.11",
+    "@types/multer-s3": "^3.0.3",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.45",
+    "@types/react-datepicker": "^6.2.0",
+    "@types/react-dom": "^18.2.18",
+    "@types/uuid": "^9.0.7"
+  }
+}

@@ -17,11 +17,17 @@
     "test:turbo": "turbo run test",
     "test:watch": "jest --config jest.config.js --watch",
     "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
     "health-check": "./scripts/health-check.sh",
     "clean": "turbo run clean",
     "format": "prettier --write \"**/*.{js,ts,tsx,md,json}\"",
     "prepare": "husky install",
-    "playwright:install": "playwright install"
+    "playwright:install": "playwright install",
+    "version:patch": "npm version patch -m 'chore(release): v%s'",
+    "version:minor": "npm version minor -m 'chore(release): v%s'",
+    "version:major": "npm version major -m 'chore(release): v%s'",
+    "deploy:staging": "echo 'Deploy to staging'",
+    "deploy:production": "echo 'Deploy to production'"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

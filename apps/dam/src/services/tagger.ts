@@ -1,4 +1,3 @@
-import * as tf from '@tensorflow/tfjs';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import { AITag } from '../types/dam';
@@ -171,7 +170,7 @@ export class AITaggerService {
     return colorTags;
   }
 
-  async analyzeVideo(videoUrl: string): Promise<AITag[]> {
+  async analyzeVideo(_videoUrl: string): Promise<AITag[]> {
     // Simplified video analysis - extract key frames and analyze them
     // In a real implementation, this would use video processing libraries
     const tags: AITag[] = [

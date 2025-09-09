@@ -47,7 +47,6 @@ import type { NextPage } from 'next';
 import axios from 'axios';
 import { subDays } from 'date-fns';
 import dayjs from 'dayjs';
-import type { Dayjs } from 'dayjs';
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -112,10 +111,7 @@ const Analytics: NextPage = () => {
   const [selectedMetric, setSelectedMetric] = useState<'views' | 'downloads' | 'uses'>('views');
 
   useEffect(() => {
-    fetchAnalytics();
-  }, [dateRange]);
-
-  const fetchAnalytics = async () => {
+    const fetchAnalytics = async () => {
     setLoading(true);
     try {
       const response = await axios.get('/api/analytics', {
@@ -131,6 +127,9 @@ const Analytics: NextPage = () => {
       setLoading(false);
     }
   };
+    
+    fetchAnalytics();
+  }, [dateRange]);
 
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
@@ -312,7 +311,7 @@ const Analytics: NextPage = () => {
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="type" />
                         <YAxis tickFormatter={(value) => formatStorageSize(value)} />
-                        <Tooltip formatter={(value: any) => formatStorageSize(value)} />
+                        <Tooltip formatter={(value: number) => formatStorageSize(value)} />
                         <Bar dataKey="size" fill="#82ca9d" />
                       </BarChart>
                     </ResponsiveContainer>
@@ -443,7 +442,7 @@ const Analytics: NextPage = () => {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date" />
                     <YAxis tickFormatter={(value) => formatStorageSize(value)} />
-                    <Tooltip formatter={(value: any) => formatStorageSize(value)} />
+                    <Tooltip formatter={(value: number) => formatStorageSize(value)} />
                     <Legend />
                     <Line type="monotone" dataKey="size" stroke="#8884d8" name="Storage Used" />
                   </LineChart>

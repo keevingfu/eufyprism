@@ -19,7 +19,6 @@ import {
 } from 'antd';
 import {
   SearchOutlined,
-  FilterOutlined,
   UploadOutlined,
   AppstoreOutlined,
   BarsOutlined,
@@ -27,7 +26,7 @@ import {
   FolderOpenOutlined,
   CloudServerOutlined,
 } from '@ant-design/icons';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import { AssetGrid } from '../components/AssetGrid';
 import { UploadZone } from '../components/UploadZone';
 import DateRangeFilter from '../components/DateRangeFilter';
@@ -51,20 +50,6 @@ const Library: NextPage = () => {
     recentUploads: 0,
   });
 
-  // Fetch assets
-  const fetchAssets = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get('/api/assets', { params: filters });
-      setAssets(response.data.assets);
-      setStats(response.data.stats);
-    } catch (error) {
-      message.error('Failed to fetch assets');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   // Fetch tags
   const fetchTags = async () => {
     try {
@@ -76,6 +61,19 @@ const Library: NextPage = () => {
   };
 
   useEffect(() => {
+    const fetchAssets = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get('/api/assets', { params: filters });
+        setAssets(response.data.assets);
+        setStats(response.data.stats);
+      } catch (error) {
+        message.error('Failed to fetch assets');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
     fetchAssets();
     fetchTags();
   }, [filters]);
@@ -102,12 +100,12 @@ const Library: NextPage = () => {
         },
       });
     } else {
-      const { dateRange, ...rest } = filters;
+      const { dateRange: _, ...rest } = filters;
       setFilters(rest);
     }
   };
 
-  const handleUpload = async (uploads: any[]) => {
+  const handleUpload = async (uploads: {file: File; tags: string[]}[]) => {
     try {
       const formData = new FormData();
       uploads.forEach((upload) => {

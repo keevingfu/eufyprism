@@ -23,7 +23,7 @@ import {
   CloseCircleOutlined,
   LoadingOutlined,
 } from '@ant-design/icons';
-import type { UploadProps, RcFile, UploadFile } from 'antd/es/upload/interface';
+import type { UploadProps, RcFile } from 'antd/es/upload/interface';
 import { AssetUpload, Tag as AssetTag } from '../types/dam';
 
 const { Dragger } = Upload;
@@ -228,6 +228,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                   <List.Item
                     actions={[
                       <Button
+                        key="remove"
                         type="text"
                         danger
                         size="small"

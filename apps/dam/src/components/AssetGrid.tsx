@@ -12,7 +12,6 @@ import {
   Tooltip,
   Badge,
   Modal,
-  message,
 } from 'antd';
 import {
   DownloadOutlined,

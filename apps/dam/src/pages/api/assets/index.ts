@@ -6,8 +6,6 @@ import { Asset, AssetFilter, AssetType } from '../../../types/dam';
 let mockAssets: Asset[] = [];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const storageService = getStorageService();
-
   switch (req.method) {
     case 'GET':
       return handleGet(req, res);

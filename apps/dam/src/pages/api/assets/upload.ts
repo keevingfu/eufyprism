@@ -35,9 +35,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     // Process multipart form data
-    await uploadMiddleware(req as any, res as any);
+    interface MulterRequest extends NextApiRequest {
+      files?: Express.Multer.File[];
+    }
+    await uploadMiddleware(req as MulterRequest, res as NextApiResponse);
 
-    const files = (req as any).files;
+    const files = (req as MulterRequest).files;
     if (!files || files.length === 0) {
       return res.status(400).json({ error: 'No files uploaded' });
     }

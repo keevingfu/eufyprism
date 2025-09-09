@@ -39,7 +39,7 @@ export interface AssetMetadata {
   channels?: number;
   sampleRate?: number;
   pages?: number;
-  [key: string]: any;
+  [key: string]: string | number | undefined;
 }
 
 export interface Tag {
@@ -116,13 +116,13 @@ export interface AssetUpload {
   file: File;
   tags?: string[];
   permissions?: AssetPermission[];
-  metadata?: Record<string, any>;
+  metadata?: Record<string, string | number | boolean>;
 }
 
 export interface AssetBulkOperation {
   assetIds: string[];
   operation: 'DELETE' | 'TAG' | 'PERMISSION' | 'MOVE';
-  data?: any;
+  data?: Record<string, unknown> | string[] | AssetPermission[];
 }
 
 export interface StorageConfig {

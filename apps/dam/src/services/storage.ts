@@ -144,7 +144,7 @@ export class StorageService {
   async getStorageStats(): Promise<{
     totalSize: number;
     assetCount: number;
-    bucketInfo: any;
+    bucketInfo: Record<string, unknown>;
   }> {
     let totalSize = 0;
     let assetCount = 0;

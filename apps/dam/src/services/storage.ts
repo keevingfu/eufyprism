@@ -28,6 +28,7 @@ export class StorageService {
         const exists = await this.client.bucketExists(bucket);
         if (!exists) {
           await this.client.makeBucket(bucket, 'us-east-1');
+          // eslint-disable-next-line no-console
           console.log(`Bucket ${bucket} created`);
         }
       }

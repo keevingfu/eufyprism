@@ -15,6 +15,7 @@ export class AITaggerService {
       this.mobilenetModel = await mobilenet.load();
       this.cocoModel = await cocoSsd.load();
       this.isInitialized = true;
+      // eslint-disable-next-line no-console
       console.log('AI models loaded successfully');
     } catch (error) {
       console.error('Error loading AI models:', error);

@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getStorageService } from '../../../services/storage';
 import { Asset, AssetFilter, AssetType } from '../../../types/dam';
 
 // Mock database (in production, use a real database)
